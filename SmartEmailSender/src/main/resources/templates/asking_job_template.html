@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{subject}}</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+        .gradient-bg {
+/*            background: linear-gradient(135deg, #e8f5e8 0%, #f0f8f0 100%);*/
+            color: #2c5530 !important;
+        }
+
+        .card-hover {
+            transition: all 0.3s ease;
+            transform: translateY(0);
+        }
+
+        .card-hover:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15) !important;
+        }
+
+        .resume-button {
+            background: #27ae60;
+            color: white !important;
+            text-decoration: none;
+            padding: 15px 35px;
+            border-radius: 50px;
+            font-weight: 600;
+            display: inline-block;
+            font-size: 16px;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
+        }
+
+        .resume-button:hover {
+            background: #219a52;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(39, 174, 96, 0.4);
+        }
+
+        .resume-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .resume-button:hover::before {
+            left: 100%;
+        }
+
+        .pulse-glow {
+            animation: pulse-glow 3s infinite;
+        }
+
+        @keyframes pulse-glow {
+            0% {
+                box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
+            }
+            50% {
+                box-shadow: 0 4px 25px rgba(39, 174, 96, 0.6), 0 0 30px rgba(39, 174, 96, 0.3);
+            }
+            100% {
+                box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
+            }
+        }
+
+        .floating-icon {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .interest-badge {
+            background: linear-gradient(45deg, #FF9A9E, #FECFEF);
+            color: #2c3e50;
+            padding: 8px 16px;
+            border-radius: 25px;
+            font-size: 13px;
+            font-weight: 600;
+            margin: 5px;
+            display: inline-block;
+        }
+
+        .accent-line {
+            height: 3px;
+            background: #27ae60;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body style="margin:0; padding:0; font-family: 'Inter', Arial, sans-serif; background: linear-gradient(135deg, #e3ffe7 0%, #d9e7ff 100%); min-height: 100vh;">
+<table width="100%" cellpadding="0" cellspacing="0" style="background: linear-gradient(135deg, #e3ffe7 0%, #d9e7ff 100%); padding:50px 20px;">
+    <tr>
+        <td align="center">
+            <table width="650" cellpadding="0" cellspacing="0" class="card-hover" style="background:#ffffff; border-radius:20px; overflow:hidden; box-shadow:0 15px 35px rgba(0,0,0,0.1); border: 1px solid rgba(255,255,255,0.9);">
+
+                <!-- Top Accent Line -->
+                <tr>
+                    <td class="accent-line"></td>
+                </tr>
+
+                <!-- Header with Light Green Background -->
+                <tr>
+                    <td class="gradient-bg" style="padding:40px 30px; text-align:center; position: relative; border-bottom: 3px solid #27ae60;">
+                        <div class="floating-icon" style="position: absolute; top: 20px; right: 30px; width: 50px; height: 50px; background: rgba(39, 174, 96, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 2px solid #27ae60;">
+                            <span style="font-size: 24px;">🔍</span>
+                        </div>
+                        <h1 style="margin: 0; font-size: 26px; font-weight: 700; letter-spacing: -0.5px; color: #2c5530;">
+                            Exploring Opportunities at {{company_name}}
+                        </h1>
+                        <p style="margin: 12px 0 0 0; font-size: 16px; font-weight: 400; color: #34673a;">
+                            Passionate Professional Seeking Growth
+                        </p>
+                    </td>
+                </tr>
+
+                <!-- Main Inquiry Content -->
+                <tr>
+                    <td style="padding:40px 40px 30px 40px; color:#2c3e50; font-size:16px; line-height:1.7;">
+                        <div style="border-left: 4px solid #38ef7d; padding-left: 20px; margin-bottom: 25px;">
+                            <h2 style="margin: 0 0 15px 0; color: #2c3e50; font-size: 20px; font-weight: 600;">
+                                Dear {{hiring_manager_name}},
+                            </h2>
+                        </div>
+
+                        <div style="background: #f8fdf8; padding: 30px; border-radius: 15px; margin: 20px 0; border: 2px solid #27ae60;">
+                            {{inquiry_message}}
+                        </div>
+
+                        <!-- Areas of Interest -->
+                        <div style="margin: 30px 0;">
+                            <h3 style="color: #2c3e50; font-size: 18px; font-weight: 600; margin-bottom: 15px; display: flex; align-items: center;">
+                                <span style="width: 8px; height: 8px; background: #27ae60; border-radius: 50%; margin-right: 12px;"></span>
+                                Areas of Interest
+                            </h3>
+                            <div style="text-align: center; margin: 20px 0;">
+                                <span style="background: transparent; color: #27ae60; border: 2px solid #27ae60; padding: 8px 16px; border-radius: 25px; font-size: 13px; font-weight: 600; margin: 5px; display: inline-block;">Software Developer</span>
+                                <span style="background: transparent; color: #27ae60; border: 2px solid #27ae60; padding: 8px 16px; border-radius: 25px; font-size: 13px; font-weight: 600; margin: 5px; display: inline-block;">React js Developer</span>
+                                <span style="background: transparent; color: #27ae60; border: 2px solid #27ae60; padding: 8px 16px; border-radius: 25px; font-size: 13px; font-weight: 600; margin: 5px; display: inline-block;">Java Developer</span>
+                                <span style="background: transparent; color: #27ae60; border: 2px solid #27ae60; padding: 8px 16px; border-radius: 25px; font-size: 13px; font-weight: 600; margin: 5px; display: inline-block;">Spring Boot Developer</span>
+                            </div>
+                        </div>
+
+                        <!-- Value Proposition -->
+                        <div style="background: #f8fdf8; border: 2px solid #27ae60; color: #2c5530; padding: 25px; border-radius: 15px; margin: 25px 0; text-align: center;">
+                            <h3 style="margin: 0 0 15px 0; font-size: 18px; font-weight: 600; color: #27ae60;">
+                                What I Bring to the Table
+                            </h3>
+                            <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #2c5530;">
+                                I stand out for my startup‑honed ability to adapt quickly, take ownership, and deliver impactful, production‑ready solutions under challenging timelines
+                            </p>
+                        </div>
+
+                        <p style="margin: 25px 0 0 0; color: #5a6c7d; text-align: center; padding: 20px; background: rgba(17, 153, 142, 0.05); border-radius: 10px;">
+                            I would be grateful for any information about current or upcoming openings that align with my background and interests.
+                        </p>
+                    </td>
+                </tr>
+
+                <!-- Call-to-Action Section -->
+                <tr>
+                    <td style="text-align:center; padding:35px 40px; background: linear-gradient(135deg, #f0fff4 0%, #f0f8ff 100%);">
+                        <h3 style="margin: 0 0 20px 0; color: #2c3e50; font-size: 18px; font-weight: 600;">
+                            Let's Connect & Explore Possibilities
+                        </h3>
+
+                        <div style="margin-bottom: 25px;">
+                            <a href="https://drive.google.com/file/d/18aQ8sA4bhSjPF4cPA8AvNdrqOoSXLZnZ/view?usp=drive_link" class="resume-button pulse-glow">
+                                📋 View My Resume
+                            </a>
+                        </div>
+
+                        <div style="margin-top: 20px;">
+                            <a href="https://amodkumarjportfolio.netlify.app/" style="background: transparent; color:#27ae60; text-decoration:none; padding:12px 28px; border: 2px solid #27ae60; border-radius:50px; font-weight:500; display:inline-block; font-size: 14px; margin: 0 8px; transition: all 0.3s ease;">
+                                🌐 Portfolio
+                            </a>
+                            <a href="https://www.linkedin.com/in/amod-kumar-j/" style="background: transparent; color:#27ae60; text-decoration:none; padding:12px 28px; border: 2px solid #27ae60; border-radius:50px; font-weight:500; display:inline-block; font-size: 14px; margin: 0 8px; transition: all 0.3s ease;">
+                                💼 LinkedIn
+                            </a>
+                            <a href="mailto:amodkumarjg@gmail.com" style="background: transparent; color:#27ae60; text-decoration:none; padding:12px 28px; border: 2px solid #27ae60; border-radius:50px; font-weight:500; display:inline-block; font-size: 14px; margin: 0 8px; transition: all 0.3s ease;">
+                                📧 Email Me
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+
+                <!-- Professional Footer -->
+                <tr>
+                    <td style="background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%); padding:30px 40px; text-align:center; color: #ecf0f1;">
+                        <div style="margin-bottom: 15px;">
+                            <h3 style="margin: 0; font-size: 20px; font-weight: 600; color: #ffffff;">
+                                Amod Kumar J
+                            </h3>
+                            <p style="margin: 8px 0; font-size: 14px; color: #bdc3c7; font-weight: 300;">
+                                Software Developer | Eager to Contribute & Grow
+                            </p>
+                        </div>
+
+                        <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; margin-top: 20px;">
+                            <div style="display: inline-block; margin: 0 20px;">
+                                <span style="color: #38ef7d; font-weight: 500;">📧</span>
+                                <a href="mailto:amodkumarjg@gmail.com" style="color:#38ef7d; text-decoration: none; margin-left: 8px; font-weight: 400;">amodkumarjg@gmail.com</a>
+                            </div>
+                            <div style="display: inline-block; margin: 0 20px;">
+                                <span style="color: #38ef7d; font-weight: 500;">📱</span>
+                                <span style="color: #ecf0f1; margin-left: 8px; font-weight: 400;">8050398425</span>
+                            </div>
+                            <div style="display: inline-block; margin: 0 20px;">
+                                <span style="color: #38ef7d; font-weight: 500;">📍</span>
+                                <span style="color: #ecf0f1; margin-left: 8px; font-weight: 400;">Bengaluru</span>
+                            </div>
+                        </div>
+
+                        <div style="margin-top: 20px; font-size: 12px; color: #95a5a6;">
+                            <p style="margin: 0;">Thank you for taking the time to consider my inquiry. I look forward to the possibility of contributing to {{company_name}}'s continued success!</p>
+                        </div>
+                    </td>
+                </tr>
+
+                <!-- Bottom Accent -->
+                <tr>
+                    <td class="accent-line"></td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
